@@ -9,4 +9,5 @@
     <string name="string_error_response">Что-то пошло не так, попробуйте позже</string>
     <string name="icon_of_the_selected_item">Icon of the selected item</string>
     <string name="string_description_selected_item">Пробный период три дня, бесплатная отмена</string>
+    <string name="string_make_purchase">Оформить подписку</string>
 </resources>

@@ -48,6 +48,12 @@ class PaymentProcessFragment : Fragment(), PaymentMethodsListAdapter.OnItemClick
             binding.btnPayment.isClickable = false
             viewModel.clickButtonPurchase()
         }
+
+        binding.tvRestoringPurchases.setOnClickListener {
+            Toast.makeText(activity, "Восстановить покупки", Toast.LENGTH_LONG).show()
+            binding.btnPayment.isClickable = true
+            binding.btnPayment.text = getString(R.string.string_make_purchase)
+        }
     }
 
     override fun onDestroyView() {
