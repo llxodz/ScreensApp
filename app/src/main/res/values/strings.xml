@@ -6,4 +6,7 @@
     <string name="string_tv_choose_method_payment">Выберете удобный для вас способ оплаты</string>
     <string name="string_text_button_payment">Оформить подписку</string>
     <string name="string_tv_restoring_purchase">Восстановить покупки</string>
+    <string name="string_error_response">Что-то пошло не так, попробуйте позже</string>
+    <string name="icon_of_the_selected_item">Icon of the selected item</string>
+    <string name="string_description_selected_item">Пробный период три дня, бесплатная отмена</string>
 </resources>

@@ -1,22 +1,29 @@
-package ru.llxodz.screensapp
+package ru.llxodz.screensapp.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item_payment_method.view.*
+import ru.llxodz.screensapp.R
+import ru.llxodz.screensapp.models.PaymentModel
 
 class PaymentMethodsListAdapter(
     private val context: Context,
-    private val paymentMethodsList: ArrayList<PaymentModel>,
     private val listener: OnItemClickListener,
-    private var rowIndex: Int = -1
+    private var rowIndex: Int = 0
 ) :
     RecyclerView.Adapter<PaymentMethodsListAdapter.PaymentMethodsViewHolder>() {
+
+    private var paymentMethodsList = java.util.ArrayList<PaymentModel>()
+
+    fun setUpdatedData(items: java.util.ArrayList<PaymentModel>) {
+        this.paymentMethodsList = items
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaymentMethodsViewHolder {
         return PaymentMethodsViewHolder(
@@ -34,11 +41,11 @@ class PaymentMethodsListAdapter(
         holder.itemView.rv_tv_paid_time.text = paymentMethodsList[position].subscriptionTime
         holder.itemView.rv_tv_cost_paid_time.text =
             "${paymentMethodsList[position].subscriptionPrice} руб."
-        holder.itemView.rv_tv_description_payment_method.text = paymentMethodsList[position].subscriptionDescription
+        holder.itemView.rv_tv_description_payment_method.text =
+            paymentMethodsList[position].subscriptionDescription
 
         holder.itemView.setOnClickListener {
             rowIndex = position
-//            listener.onItemClick(position)
             notifyDataSetChanged()
         }
 
@@ -53,12 +60,24 @@ class PaymentMethodsListAdapter(
         fun bind() {
             if (rowIndex == adapterPosition) {
                 itemView.setBackgroundResource(R.drawable.bg_layout_methods_payment_selected)
+                itemView.rv_tv_description_payment_method.text =
+                    context.getString(R.string.string_description_selected_item)
                 itemView.ic_selected_payment_method.visibility = View.VISIBLE
-                itemView.rv_tv_description_payment_method.setTextColor(ContextCompat.getColor(context, R.color.black))
+                itemView.rv_tv_description_payment_method.setTextColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.black
+                    )
+                )
             } else {
                 itemView.setBackgroundResource(R.drawable.bg_layout_methods_payment_unselected)
                 itemView.ic_selected_payment_method.visibility = View.GONE
-                itemView.rv_tv_description_payment_method.setTextColor(ContextCompat.getColor(context, R.color.primaryGray))
+                itemView.rv_tv_description_payment_method.setTextColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.primaryGray
+                    )
+                )
             }
         }
 

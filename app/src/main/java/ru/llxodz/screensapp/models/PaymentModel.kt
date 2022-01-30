@@ -1,4 +1,4 @@
-package ru.llxodz.screensapp
+package ru.llxodz.screensapp.models
 
 data class PaymentModel(
     val subscriptionTime: String,
