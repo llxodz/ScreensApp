@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ScreensApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_tv_app_paid_title">Приложение платное</string>
+    <string name="string_tv_choose_method_payment">Выберете удобный для вас способ оплаты</string>
+    <string name="string_text_button_payment">Оформить подписку</string>
+    <string name="string_tv_restoring_purchase">Восстановить покупки</string>
+    <string name="string_error_response">Что-то пошло не так, попробуйте позже</string>
+    <string name="icon_of_the_selected_item">Icon of the selected item</string>
+    <string name="string_description_selected_item">Пробный период три дня, бесплатная отмена</string>
+    <string name="string_make_purchase">Оформить подписку</string>
 </resources>
