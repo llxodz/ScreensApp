@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container_row_item_pm"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="105dp"
     android:layout_marginStart="18dp"
@@ -7,31 +9,43 @@
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_layout_methods_payment">
+    android:background="@drawable/bg_layout_methods_payment_unselected">
+
+    <ImageView
+        android:id="@+id/ic_selected_payment_method"
+        android:layout_width="20dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_selected_payment_method"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rv_tv_description_payment_method"/>
 
     <TextView
         android:id="@+id/rv_tv_paid_time"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
+        android:layout_height="wrap_content"
         android:text="1 месяц"
         android:fontFamily="@font/sf_pro"
         android:textColor="@color/black"
+        android:maxLines="1"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toRightOf="@+id/ic_selected_payment_method"/>
 
     <TextView
         android:id="@+id/rv_tv_cost_paid_time"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="16dp"
         android:textSize="24sp"
         android:fontFamily="@font/sf_pro"
         android:textColor="@color/black"
-        android:text="499 руб."
+        android:text="4999 руб."
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
     
@@ -43,6 +57,7 @@
         android:text="Ежемесячная подписка"
         android:fontFamily="@font/sf_pro_regular"
         android:textSize="16sp"
+        android:layout_marginTop="16dp"
         android:textColor="@color/primaryGray"
         app:layout_constraintTop_toBottomOf="@id/rv_tv_paid_time"
         app:layout_constraintLeft_toLeftOf="parent" />
